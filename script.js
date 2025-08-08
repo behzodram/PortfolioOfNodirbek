@@ -184,7 +184,7 @@ function loadVideos() {
         videoCard.innerHTML = `
             <div class="video-thumbnail">
                 <img src="${video.thumbnail}" alt="${video.title}" class="thumbnail-img">
-                <video class="video-player" preload="metadata" loop muted>
+                <video class="video-player" preload="metadata" loop>
                     <source src="${video.videoSrc}" type="video/mp4">
                 </video>
                 <div class="play-overlay">
@@ -216,6 +216,7 @@ function loadVideos() {
         const videoPlayer = videoCard.querySelector('.video-player');
         
         thumbnail.addEventListener('mouseenter', () => {
+            videoPlayer.muted = true;
             videoPlayer.play();
             thumbnail.querySelector('.play-overlay').style.opacity = '1';
         });
@@ -228,13 +229,7 @@ function loadVideos() {
         
         thumbnail.addEventListener('click', () => {
             trackVideoView(index + 1);
-            if (videoPlayer.paused) {
-                videoPlayer.play();
-                thumbnail.querySelector('.play-overlay').style.opacity = '0';
-            } else {
-                videoPlayer.pause();
-                thumbnail.querySelector('.play-overlay').style.opacity = '1';
-            }
+            openFullscreenVideo(video.videoSrc);
         });
         
         // Like button functionality
@@ -252,6 +247,30 @@ function loadVideos() {
         });
     });
 }
+
+// Fullscreen Video Modal
+const videoModal = document.getElementById('video-modal');
+const fullscreenVideo = document.getElementById('fullscreen-video');
+const closeVideoModal = document.querySelector('.close-video-modal');
+
+function openFullscreenVideo(videoSrc) {
+    fullscreenVideo.src = videoSrc;
+    fullscreenVideo.muted = false;
+    videoModal.style.display = 'block';
+    fullscreenVideo.play();
+}
+
+function closeFullscreenVideo() {
+    fullscreenVideo.pause();
+    videoModal.style.display = 'none';
+}
+
+closeVideoModal.addEventListener('click', closeFullscreenVideo);
+window.addEventListener('click', (e) => {
+    if (e.target === videoModal) {
+        closeFullscreenVideo();
+    }
+});
 
 // Load view and like counts from Firebase
 function loadVideoCounts(videoId) {
@@ -285,7 +304,7 @@ function trackVideoLike(videoId) {
     });
 }
 
-// Modal elements and functions (same as before)
+// Feedback Modal elements and functions
 const modal = document.getElementById('feedback-modal');
 const modalTitle = document.getElementById('modal-project-title');
 const closeModal = document.querySelector('.close-modal');
