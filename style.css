@@ -122,6 +122,18 @@ nav .container {
     align-items: center;
 }
 
+.nav-left, .nav-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.logo-container {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
 .logo {
     font-size: 1.5rem;
     font-weight: 700;
@@ -130,8 +142,7 @@ nav .container {
 
 .nav-links {
     display: flex;
-    gap: 30px;
-    align-items: center;
+    gap: 20px;
 }
 
 .nav-links a {
@@ -573,7 +584,7 @@ nav .container {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
-/* Feedback Modal Styles */
+/* Modals */
 .modal {
     display: none;
     position: fixed;
@@ -586,7 +597,7 @@ nav .container {
     overflow: auto;
 }
 
-.modal-content {
+.modal-content, .video-modal-content {
     background-color: var(--card-bg);
     margin: 5% auto;
     padding: 30px;
@@ -598,7 +609,21 @@ nav .container {
     position: relative;
 }
 
-.close-modal {
+.video-modal-content {
+    max-width: 800px;
+    padding: 0;
+    background: transparent;
+    border: none;
+}
+
+#fullscreen-video {
+    width: 100%;
+    height: auto;
+    max-height: 80vh;
+    border-radius: 10px;
+}
+
+.close-modal, .close-video-modal {
     position: absolute;
     top: 15px;
     right: 20px;
@@ -607,10 +632,11 @@ nav .container {
     cursor: pointer;
 }
 
-.close-modal:hover {
+.close-modal:hover, .close-video-modal:hover {
     color: var(--accent);
 }
 
+/* Feedback Form Styles */
 .feedback-form {
     margin-bottom: 30px;
 }
@@ -692,6 +718,21 @@ footer {
     text-align: center;
 }
 
+.developer-credit {
+    margin-left: 15px;
+    font-size: 0.9rem;
+}
+
+.developer-credit a {
+    color: var(--accent);
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+.developer-credit a:hover {
+    color: white;
+}
+
 /* Animations */
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(20px); }
@@ -725,6 +766,24 @@ footer {
     
     .menu-toggle {
         display: block;
+    }
+
+    .logo-container {
+        position: static;
+        transform: none;
+        order: -1;
+    }
+
+    nav .container {
+        justify-content: space-between;
+    }
+
+    .nav-left, .nav-right {
+        gap: 10px;
+    }
+
+    .language-switcher {
+        display: none;
     }
     
     section {
@@ -765,5 +824,10 @@ footer {
     
     .side-nav {
         width: 100%;
+    }
+
+    .developer-credit {
+        display: block;
+        margin: 10px 0 0;
     }
 }
