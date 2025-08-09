@@ -130,47 +130,47 @@ function changeLanguage(lang) {
 // Videos Data
 const videos = [
     {
-        title: "Project 1",
-        description: "Animated explainer video for a tech startup",
+        title: "Krasovka Reklamasi",
+        description: "Nike brendidagi krasovka animatsion holatda",
         thumbnail: "assets/images/Screenshot1.png",
         videoSrc: "assets/videos/Video1.mp4"
     },
     {
-        title: "Project 2",
-        description: "Product animation for a cosmetics brand",
+        title: "Taklifnoma Animatsiyasi",
+        description: "To'y (Tug'ilgan) kuni uchun taklifnoma animatsiyasi",
+        thumbnail: "assets/images/Screenshot7.png",
+        videoSrc: "assets/videos/Video7.mp4"
+    },
+    {
+        title: "Ichimlik Sharbati",
+        description: "After Effects yordamida yaratilgan ichimlik sharbati reklama animatsiyasi",
         thumbnail: "assets/images/Screenshot2.png",
         videoSrc: "assets/videos/Video2.mp4"
     },
     {
-        title: "Project 3",
-        description: "UI/UX animation for a mobile app",
-        thumbnail: "assets/images/Screenshot3.png",
-        videoSrc: "assets/videos/Video3.mp4"
-    },
-    {
-        title: "Project 4",
-        description: "Motion graphics for a music festival",
+        title: "Mantaj Animatsiyasi",
+        description: "Motion Graphics yordamida yaratilgan mantaj animatsiyasi",
         thumbnail: "assets/images/Screenshot4.png",
         videoSrc: "assets/videos/Video4.mp4"
     },
     {
-        title: "Project 5",
-        description: "Animated logo for a restaurant chain",
-        thumbnail: "assets/images/Screenshot5.png",
-        videoSrc: "assets/videos/Video5.mp4"
+        title: "WATCHCO",
+        description: "UI/UX Android ilovasi uchun animatsiya",
+        thumbnail: "assets/images/Screenshot3.png",
+        videoSrc: "assets/videos/Video3.mp4"
     },
     {
-        title: "Project 6",
-        description: "Advertising animation for a sports brand",
+        title: "Toshkent City",
+        description: "Instagram uchun yaratilgan Toshkent City reels animatsiyasi",
         thumbnail: "assets/images/Screenshot6.png",
         videoSrc: "assets/videos/Video6.mp4"
     },
     {
-        title: "Project 7",
-        description: "Character animation for an educational app",
-        thumbnail: "assets/images/Screenshot7.png",
-        videoSrc: "assets/videos/Video7.mp4"
-    }
+        title: "Charxpalak o'yini",
+        description: "Bolalar uchun o'yin animatsiyasi",
+        thumbnail: "assets/images/Screenshot5.png",
+        videoSrc: "assets/videos/Video5.mp4"
+    },
 ];
 
 // Load Videos with counters
